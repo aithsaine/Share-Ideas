@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ideaSchema =new mongoose.Schema({
+const postSchema =new mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"users",
@@ -14,6 +14,6 @@ const ideaSchema =new mongoose.Schema({
 
 
 })
-const Idea = mongoose.models.ideas||mongoose.model("ideas",ideaSchema);
+const Post = mongoose.models.posts||mongoose.model("posts",postSchema);
 
-export default Idea;
+export default Post;

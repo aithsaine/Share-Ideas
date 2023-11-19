@@ -1,11 +1,13 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from "next/link"
+
 
 const Nav = () => {
     const [isLogged, setIsLogged] = useState(false)
     const [toggleDropdown, setToggleDropdown] = useState(false)
+
     return (
         <nav className='w-full   pt-4 mt-5'>
             {/* for desktop  */}
@@ -26,8 +28,8 @@ const Nav = () => {
                     <div className='me-2 px-6'>
 
 
-                        <Link href={"/"} style={{ width: "15dvh" }} className='font-bold hover:bg-gray-500 bg-black text-white rounded py-2 px-10  mx-5 '>Login</Link>
-                        <Link href={"/"} style={{ width: "15dvh" }} className='font-bold border border-black hover:bg-gray-500 hover:text-white rounded py-2 px-10 '>register</Link>
+                        <Link href={"/login"} style={{ width: "15dvh" }} className='font-bold hover:bg-gray-500 bg-black text-white rounded py-2 px-10  mx-5 '>Login</Link>
+                        <Link href={"/register"} style={{ width: "15dvh" }} className='font-bold border border-black hover:bg-gray-500 hover:text-white rounded py-2 px-10 '>register</Link>
 
                     </div>
                 ) : (
@@ -67,8 +69,8 @@ const Nav = () => {
                             onClick={e=>setToggleDropdown(false)}
                             width={34}
                             height={34} />
-                        <Link href={"/"} style={{ width: "15dvh" }} className='font-bold text-xl   px-10  m-3 '>Login</Link>
-                        <Link href={"/"} style={{ width: "15dvh" }} className='font-bold text-xl px-10 m-3'>Register</Link>
+                        <Link href={"/login"} onClick={e=>setToggleDropdown(false)} style={{ width: "15dvh" }} className='font-bold text-xl   px-10  m-3 '>Login</Link>
+                        <Link href={"/register"} style={{ width: "15dvh" }} onClick={e=>setToggleDropdown(false)} className='font-bold text-xl px-10 m-3'>Register</Link>
 
                     </div>
                 ) : (
